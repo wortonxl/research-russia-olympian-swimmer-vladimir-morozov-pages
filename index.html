@@ -320,6 +320,16 @@
       margin-top: 8px;
     }
 
+    /* Source-specific border colors */
+    .source-card[data-source="rand"]             { border-left-color: #335cff; }
+    .source-card[data-source="brookings"]        { border-left-color: #0f766e; }
+    .source-card[data-source="csis"]             { border-left-color: #8a2be2; }
+    .source-card[data-source="cfr"]              { border-left-color: #ff7f00; }
+    .source-card[data-source="foreign-affairs"]  { border-left-color: #ff0000; }
+    .source-card[data-source="nyt"]              { border-left-color: #ffd700; }
+    .source-card[data-source="washington-post"]  { border-left-color: #008080; }
+    .source-card[data-source="ifri"]             { border-left-color: #ff69b4; }
+
     .section ul, .section ol { margin: 0; padding-left: 18px; }
     .section li { margin: 10px 0; }
 
@@ -388,234 +398,333 @@
     <aside class="sidebar">
       <h3 class="toc-title">Contents</h3>
       <ul class="toc-list">
-                <li class="toc-item">
-          <a href="#section-1" class="toc-link">Corroborated Findings (both sources agree)</a>
-          <ul class="toc-sublist">
-            <li class="toc-subitem"><a href="#section-1-sub-1" class="toc-sublink">Basic Identity</a></li>
-            <li class="toc-subitem"><a href="#section-1-sub-2" class="toc-sublink">Olympic Career</a></li>
-            <li class="toc-subitem"><a href="#section-1-sub-3" class="toc-sublink">World Championships (Short Course)</a></li>
-            <li class="toc-subitem"><a href="#section-1-sub-4" class="toc-sublink">FINA Swimming World Cup</a></li>
-            <li class="toc-subitem"><a href="#section-1-sub-5" class="toc-sublink">100m Individual Medley — World Record</a></li>
-            <li class="toc-subitem"><a href="#section-1-sub-6" class="toc-sublink">European Championships (Short Course)</a></li>
-          </ul>
-        </li>
-        <li class="toc-item">
-          <a href="#section-2" class="toc-link">Additional from Grok Search</a>
-          <ul class="toc-sublist">
-            <li class="toc-subitem"><a href="#section-2-sub-1" class="toc-sublink">Career-Wide Summary</a></li>
-            <li class="toc-subitem"><a href="#section-2-sub-2" class="toc-sublink">Detailed Medal Counts</a></li>
-            <li class="toc-subitem"><a href="#section-2-sub-3" class="toc-sublink">Specific Olympic Results</a></li>
-            <li class="toc-subitem"><a href="#section-2-sub-4" class="toc-sublink">Long Course World Championships Detail</a></li>
-            <li class="toc-subitem"><a href="#section-2-sub-5" class="toc-sublink">Short Course World Championships Detail</a></li>
-            <li class="toc-subitem"><a href="#section-2-sub-6" class="toc-sublink">Universiade</a></li>
-            <li class="toc-subitem"><a href="#section-2-sub-7" class="toc-sublink">NCAA</a></li>
-            <li class="toc-subitem"><a href="#section-2-sub-8" class="toc-sublink">Personal Bests (Selected)</a></li>
-          </ul>
-        </li>
-        <li class="toc-item">
-          <a href="#section-3" class="toc-link">Additional from Perplexity</a>
-          <ul class="toc-sublist">
-            <li class="toc-subitem"><a href="#section-3-sub-1" class="toc-sublink">Retirement Detail</a></li>
-            <li class="toc-subitem"><a href="#section-3-sub-2" class="toc-sublink">Broad Context — Russian Doping Environment</a></li>
-            <li class="toc-subitem"><a href="#section-3-sub-3" class="toc-sublink">Specific European Championships Detail (2012 Chartres)</a></li>
-            <li class="toc-subitem"><a href="#section-3-sub-4" class="toc-sublink">USC Detail</a></li>
-          </ul>
-        </li>
-        <li class="toc-item">
-          <a href="#section-4" class="toc-link">Contradictions / Discrepancies</a>
-          <ul class="toc-sublist">
-          </ul>
-        </li>
-        <li class="toc-item">
-          <a href="#section-5" class="toc-link">SOURCES</a>
-          <ul class="toc-sublist">
-            <li class="toc-subitem"><a href="#section-5-sub-1" class="toc-sublink">World Championships — 2017 Budapest</a></li>
-            <li class="toc-subitem"><a href="#section-5-sub-2" class="toc-sublink">From Grok Search:</a></li>
-          </ul>
-        </li>
-        <li class="toc-item">
-          <a href="#section-6" class="toc-link">CONFIDENCE: High (with one caution)</a>
-          <ul class="toc-sublist">
-          </ul>
-        </li>
-        <li class="toc-item">
-          <a href="#section-7" class="toc-link">GAPS</a>
-          <ul class="toc-sublist">
-            <li class="toc-subitem"><a href="#section-7-sub-1" class="toc-sublink">From Perplexity:</a></li>
-          </ul>
-        </li>
-
+        <li class="toc-item"><a href="#section-1" class="toc-link">Corroborated Findings (both sources agree)</a></li>
+<li class="toc-subitem"><a href="#basic-identity" class="toc-sublink">Basic Identity</a></li>
+<li class="toc-subitem"><a href="#olympic-career" class="toc-sublink">Olympic Career</a></li>
+<li class="toc-subitem"><a href="#world-championships-short-course" class="toc-sublink">World Championships (Short Course)</a></li>
+<li class="toc-subitem"><a href="#fina-swimming-world-cup" class="toc-sublink">FINA Swimming World Cup</a></li>
+<li class="toc-subitem"><a href="#100m-individual-medley-world-record" class="toc-sublink">100m Individual Medley — World Record</a></li>
+<li class="toc-subitem"><a href="#european-championships-short-course" class="toc-sublink">European Championships (Short Course)</a></li>
+<li class="toc-subitem"><a href="#career-wide-summary" class="toc-sublink">Career-Wide Summary</a></li>
+<li class="toc-item"><a href="#section-2" class="toc-link">Additional from Grok Search</a></li>
+<li class="toc-subitem"><a href="#detailed-medal-counts" class="toc-sublink">Detailed Medal Counts</a></li>
+<li class="toc-subitem"><a href="#specific-olympic-results" class="toc-sublink">Specific Olympic Results</a></li>
+<li class="toc-subitem"><a href="#long-course-world-championships-detail" class="toc-sublink">Long Course World Championships Detail</a></li>
+<li class="toc-subitem"><a href="#short-course-world-championships-detail" class="toc-sublink">Short Course World Championships Detail</a></li>
+<li class="toc-subitem"><a href="#universiade" class="toc-sublink">Universiade</a></li>
+<li class="toc-subitem"><a href="#ncaa" class="toc-sublink">NCAA</a></li>
+<li class="toc-subitem"><a href="#personal-bests-selected" class="toc-sublink">Personal Bests (Selected)</a></li>
+<li class="toc-subitem"><a href="#retirement-detail" class="toc-sublink">Retirement Detail</a></li>
+<li class="toc-item"><a href="#section-3" class="toc-link">Additional from Perplexity</a></li>
+<li class="toc-subitem"><a href="#broad-context-russian-doping-environment" class="toc-sublink">Broad Context — Russian Doping Environment</a></li>
+<li class="toc-subitem"><a href="#specific-european-championships-detail-2012-chartres" class="toc-sublink">Specific European Championships Detail (2012 Chartres)</a></li>
+<li class="toc-subitem"><a href="#usc-detail" class="toc-sublink">USC Detail</a></li>
+<li class="toc-subitem"><a href="#world-championships-2017-budapest" class="toc-sublink">World Championships — 2017 Budapest</a></li>
+<li class="toc-item"><a href="#section-4" class="toc-link">Contradictions / Discrepancies</a></li>
+<li class="toc-item"><a href="#section-5" class="toc-link">SOURCES</a></li>
+<li class="toc-subitem"><a href="#from-grok-search" class="toc-sublink">From Grok Search:</a></li>
+<li class="toc-subitem"><a href="#from-perplexity" class="toc-sublink">From Perplexity:</a></li>
+<li class="toc-item"><a href="#section-6" class="toc-link">CONFIDENCE: High (with one caution)</a></li>
+<li class="toc-item"><a href="#section-7" class="toc-link">GAPS</a></li>
       </ul>
     </aside>
 
     <main class="main-content">
       <div class="wrap">
         <section class="hero">
-          <div class="eyebrow">Sports Research</div>
+          <div class="eyebrow">Research Report</div>
           <h1>Vladimir Morozov — Russian Olympian Swimmer: Synthesized Research</h1>
-          <p class="lede">Synthesized Research</p>
+          <p class="lede">Grok provides comprehensive medal tallies:
+- Olympics: 0 G / 0 S / 1 B (1 total)
+- World Championships (LC): 0 G / 3 S / 3 B (6 total)
+- World Championships (SC): 11 G / 11 S / 2 B (24 total)
+- Europe</p>
           <div class="grid cols-3 section">
             <div class="card stat">
-              <strong>10</strong>
-              <span>Claims Analyzed</span>
+              <strong>7</strong>
+              <span>Topic Sections</span>
             </div>
             <div class="card stat">
-              <strong>123</strong>
-              <span>Medals Won</span>
+              <strong>—</strong>
+              <span></span>
             </div>
             <div class="card stat">
-              <strong>25+</strong>
-              <span>Sources Cited</span>
+              <strong>—</strong>
+              <span></span>
             </div>
           </div>
         </section>
 
-                <section id="section-1" class="section">
-          <h2>Corroborated Findings (both sources agree)</h2>
-
-          <div class="sub-section" id="section-1-sub-1">
-            <h3>Basic Identity</h3>
-            <p>Vladimir Viktorovich Morozov, born 16 June 1992 in Novosibirsk, Russia. Russian competitive swimmer, retired. Sprint specialist — versatile across freestyle, backstroke, breaststroke, butterfly, and individual medley. Swam collegiately at the University of Southern California (USC); became an All-American. Competed internationally for Russia, and later as a neutral athlete (ROC / Russian Swimming Federation) due to doping-related sanctions on Russia. Retired from professional swimming, announced in 2024. (Sources: grok + perplexity)</p>
-          </div>
-
-          <div class="sub-section" id="section-1-sub-2">
-            <h3>Olympic Career</h3>
-            <p>2012 London (Russia): Bronze medal — 4×100m freestyle relay. Also competed in 100m backstroke and 4×100m medley relay. 2016 Rio (Russia): Competed in 50m freestyle, 100m freestyle, 4×100m freestyle relay, 4×100m medley relay. Did not medal. 2020 Tokyo (ROC): Competed in 50m freestyle and 4×100m freestyle relay. Did not medal. Summary: 0 gold, 0 silver, 1 bronze across three Olympics. (Sources: grok + perplexity)</p>
-          </div>
-
-          <div class="sub-section" id="section-1-sub-3">
-            <h3>World Championships (Short Course)</h3>
-            <p>Dominant in short-course (25m) World Championships across multiple editions beginning with 2012 Istanbul, where he won multiple medals including gold in relays. One of the most decorated short-course swimmers of his era. (Sources: grok + perplexity)</p>
-          </div>
-
-          <div class="sub-section" id="section-1-sub-4">
-            <h3>FINA Swimming World Cup</h3>
-            <p>One of the most successful swimmers ever on the short-course World Cup circuit. Well over 100 gold medals (Perplexity: "well over 100"; Grok: 123 gold out of 176 total medals). Set and tied multiple records in 100m IM and 50m freestyle. (Sources: grok + perplexity)</p>
-          </div>
-
-          <div class="sub-section" id="section-1-sub-5">
-            <h3>100m Individual Medley — World Record</h3>
-            <p>Set a world record in the short-course 100m individual medley at 50.26 seconds (2018 World Cup). European record, former WR. (Sources: grok + perplexity)</p>
-          </div>
-
-          <div class="sub-section" id="section-1-sub-6">
-            <h3>European Championships (Short Course)</h3>
-            <p>Extremely successful at European Short Course Championships, including: - 2012 Chartres: Gold in 100m freestyle and 100m IM; silver in 50m freestyle; bronze in 50m backstroke. - 2017 Copenhagen: Broke Russian national record in 50m freestyle twice; won gold. - 2019 Glasgow: Won seven gold medals, including 50m freestyle and 50m breaststroke (European record). (Sources: grok + perplexity)</p>
-          </div>
-        </section>
-
-        <section id="section-2" class="section">
-          <h2>Additional from Grok Search</h2>
-
-          <div class="sub-section" id="section-2-sub-1">
-            <h3>Career-Wide Summary</h3>
-            <p>One of the most versatile sprint swimmers of his generation. Exceptional short-course swimmer; strong relay anchor. Career shaped and ultimately limited by Russian doping sanctions — competed as ROC/neutral athlete in later years, missed competitions due to national federation bans, and retired earlier than planned due to circumstances beyond his control. Post-retirement, involved in coaching and swimming instruction. (Sources: grok + perplexity)</p>
-          </div>
-
-          <div class="sub-section" id="section-2-sub-2">
-            <h3>Detailed Medal Counts</h3>
-            <p>Grok provides comprehensive medal tallies: Olympics: 0 G / 0 S / 1 B (1 total) World Championships (LC): 0 G / 3 S / 3 B (6 total) World Championships (SC): 11 G / 11 S / 2 B (24 total) European Championships (LC): 2 G / 4 S / 1 B (7 total) European Championships (SC): 17 G / 7 S / 3 B (27 total) FINA World Cup: 176 medals (123 G / 34 S / 19 B) Overall major championship tally: 30 G / 25 S / 10 B (65 total)</p>
-          </div>
-
-          <div class="sub-section" id="section-2-sub-3">
-            <h3>Specific Olympic Results</h3>
-            <p>2012 London: Bronze 4×100m free relay (split 47.85; total 3:11.41). 2016 Rio: 10th 50m free, 9th 100m free, 4th 4×100m free relay, 4th 4×100m medley relay. 2020 Tokyo: 16th 50m free (22.25 semis), 7th 4×100m free relay.</p>
-          </div>
-
-          <div class="sub-section" id="section-2-sub-4">
-            <h3>Long Course World Championships Detail</h3>
-            <p>2013 Barcelona: Silver 50m free (21.47, Russian record). 2015 Kazan, 2017 Budapest, 2019 Gwangju: Multiple silver/bronze and high placements in relays and 50m events. Contributed to Russian relay records.</p>
-          </div>
-
-          <div class="sub-section" id="section-2-sub-5">
-            <h3>Short Course World Championships Detail</h3>
-            <p>Golds in 50m and 100m freestyle at 2012 and 2018 editions. Multiple relay golds across 2012 Istanbul, 2014 Doha, 2016 Windsor, 2018 Hangzhou, and 2021 Abu Dhabi. Set or contributed to multiple relay records.</p>
-          </div>
-
-          <div class="sub-section" id="section-2-sub-6">
-            <h3>Universiade</h3>
-            <p>2013 Kazan Summer Universiade: Swept 6 golds — 50m and 100m free, 50m back, 50m breast, plus two relays.</p>
-          </div>
-
-          <div class="sub-section" id="section-2-sub-7">
-            <h3>NCAA</h3>
-            <p>Multi-time NCAA champion (2013) at USC. First swimmer to break 18 seconds for a 50-yard freestyle relay split (17.86).</p>
-          </div>
-
-          <div class="sub-section" id="section-2-sub-8">
-            <h3>Personal Bests (Selected)</h3>
-            <p>Long Course (LCM): Short Course (SCM): Yards (NCAA):</p>
-          </div>
-        </section>
-
-        <section id="section-3" class="section">
-          <h2>Additional from Perplexity</h2>
-
-          <div class="sub-section" id="section-3-sub-1">
-            <h3>Retirement Detail</h3>
-            <p>Announced retirement April 2024 at age 31. Cited factors beyond his control despite planning to swim through Paris 2024. Post-retirement: coaching and swimming instruction.</p>
-          </div>
-
-          <div class="sub-section" id="section-3-sub-2">
-            <h3>Broad Context — Russian Doping Environment</h3>
-            <p>Perplexity emphasizes that Morozov himself had no clear confirmed individual doping suspension — the impact was structural: restricted eligibility, neutral-flag competition, non-invitations, and ultimately forced early retirement. Competed for ROC at Tokyo due to WADA sanctions on Russia.</p>
-          </div>
-
-          <div class="sub-section" id="section-3-sub-3">
-            <h3>Specific European Championships Detail (2012 Chartres)</h3>
-            <p>Confirms breakout performance: Gold in 100m free and 100m IM; silver in 50m free; bronze in 50m back.</p>
-          </div>
-
-          <div class="sub-section" id="section-3-sub-4">
-            <h3>USC Detail</h3>
-            <p>Confirmed as USC Trojan; All-American. (Grok provides NCAA records; Perplexity confirms the USC connection.)</p>
-          </div>
-        </section>
-
-        <section id="section-4" class="section">
-          <h2>Contradictions / Discrepancies</h2>
-        </section>
-
-        <section id="section-5" class="section">
-          <h2>SOURCES</h2>
-
-          <div class="sub-section" id="section-5-sub-1">
-            <h3>World Championships — 2017 Budapest</h3>
-            <p>Perplexity specifies bronze in 50m freestyle and relay bronze in 4×100m medley relay.</p>
-          </div>
-
-          <div class="sub-section" id="section-5-sub-2">
-            <h3>From Grok Search:</h3>
-            <p class="source-url"><a href="https://swimswam.com/olympic-medalist-vladimir-morozov-announces-retirement-from-professional-swimming/">https://swimswam.com/olympic-medalist-vladimir-morozov-announces-retirement-from-professional-swimming/</a></p>
-            <p class="source-url"><a href="https://en.wikipedia.org/wiki/Vladimir_Morozov_(swimmer)">https://en.wikipedia.org/wiki/Vladimir_Morozov_(swimmer)</a></p>
-            <p class="source-url"><a href="https://www.olympics.com/en/athletes/vladimir-morozov-1">https://www.olympics.com/en/athletes/vladimir-morozov-1</a></p>
-            <p class="source-url"><a href="https://swimswam.com/morozov-hits-21-27-russian-record-to-become-worlds-10th-best-50-freestyler-ever/">https://swimswam.com/morozov-hits-21-27-russian-record-to-become-worlds-10th-best-50-freestyler-ever/</a></p>
-          </div>
-        </section>
-
-        <section id="section-6" class="section">
-          <h2>CONFIDENCE: High (with one caution)</h2>
-        </section>
-
-        <section id="section-7" class="section">
-          <h2>GAPS</h2>
-
-          <div class="sub-section" id="section-7-sub-1">
-            <h3>From Perplexity:</h3>
-            <p class="source-url"><a href="https://en.wikipedia.org/wiki/Vladimir_Morozov_(swimmer)">https://en.wikipedia.org/wiki/Vladimir_Morozov_(swimmer)</a></p>
-            <p class="source-url"><a href="https://www.olympedia.org/athletes/120660">https://www.olympedia.org/athletes/120660</a></p>
-            <p class="source-url"><a href="https://swimswam.com/bio/vlad-morozov/">https://swimswam.com/bio/vlad-morozov/</a></p>
-            <p class="source-url"><a href="https://www.swimmingworldmagazine.com/news/vladimir-morozov-wins-seven-golds-as-russia-finish-atop-the-medal-table-at-european-sc/">https://www.swimmingworldmagazine.com/news/vladimir-morozov-wins-seven-golds-as-russia-finish-atop-the-medal-table-at-european-sc/</a></p>
-            <p class="source-url"><a href="https://usctrojans.com/sports/mens-swimming-and-diving/roster/vladimir-morozov/3070">https://usctrojans.com/sports/mens-swimming-and-diving/roster/vladimir-morozov/3070</a></p>
-            <p class="source-url"><a href="https://swim.by/vladimir-morozov/">https://swim.by/vladimir-morozov/</a></p>
-            <p class="source-url"><a href="https://www.swimcloud.com/swimmer/94646/">https://www.swimcloud.com/swimmer/94646/</a></p>
-          </div>
-        </section>
-
-
+        <section id="section-1" class="section">
+<h2>Corroborated Findings (both sources agree)</h2>
+<div class="sub-section" id="basic-identity">
+<h3>Basic Identity</h3>
+<ul>
+<li><strong>Vladimir Viktorovich Morozov</strong>, born 16 June 1992 in Novosibirsk, Russia.</li>
+<li>Russian competitive swimmer, retired.</li>
+<li>Sprint specialist — versatile across freestyle, backstroke, breaststroke, butterfly, and individual medley.</li>
+<li>Swam collegiately at the <strong>University of Southern California (USC)</strong>; became an All-American.</li>
+<li>Competed internationally for Russia, and later as a neutral athlete (ROC / Russian Swimming Federation) due to doping-related sanctions on Russia.</li>
+<li>Retired from professional swimming, announced in 2024.</li>
+<li>(Sources: grok + perplexity)</li>
+</ul>
+</div>
+<div class="sub-section" id="olympic-career">
+<h3>Olympic Career</h3>
+<ul>
+<li><strong>2012 London (Russia)</strong>: <strong>Bronze medal — 4×100m freestyle relay</strong>. Also competed in 100m backstroke and 4×100m medley relay.</li>
+<li><strong>2016 Rio (Russia)</strong>: Competed in 50m freestyle, 100m freestyle, 4×100m freestyle relay, 4×100m medley relay. Did not medal.</li>
+<li><strong>2020 Tokyo (ROC)</strong>: Competed in 50m freestyle and 4×100m freestyle relay. Did not medal.</li>
+<li><strong>Summary</strong>: 0 gold, 0 silver, 1 bronze across three Olympics.</li>
+<li>(Sources: grok + perplexity)</li>
+</ul>
+</div>
+<div class="sub-section" id="world-championships-short-course">
+<h3>World Championships (Short Course)</h3>
+<ul>
+<li>Dominant in short-course (25m) World Championships across multiple editions beginning with <strong>2012 Istanbul</strong>, where he won multiple medals including gold in relays.</li>
+<li>One of the most decorated short-course swimmers of his era.</li>
+<li>(Sources: grok + perplexity)</li>
+</ul>
+</div>
+<div class="sub-section" id="fina-swimming-world-cup">
+<h3>FINA Swimming World Cup</h3>
+<ul>
+<li>One of the most successful swimmers ever on the short-course World Cup circuit.</li>
+<li><strong>Well over 100 gold medals</strong> (Perplexity: "well over 100"; Grok: 123 gold out of 176 total medals).</li>
+<li>Set and tied multiple records in 100m IM and 50m freestyle.</li>
+<li>(Sources: grok + perplexity)</li>
+</ul>
+</div>
+<div class="sub-section" id="100m-individual-medley-world-record">
+<h3>100m Individual Medley — World Record</h3>
+<ul>
+<li>Set a <strong>world record</strong> in the short-course <strong>100m individual medley</strong> at <strong>50.26 seconds</strong> (2018 World Cup). European record, former WR.</li>
+<li>(Sources: grok + perplexity)</li>
+</ul>
+</div>
+<div class="sub-section" id="european-championships-short-course">
+<h3>European Championships (Short Course)</h3>
+<ul>
+<li>Extremely successful at European Short Course Championships, including:</li>
+<li><strong>2012 Chartres</strong>: Gold in 100m freestyle and 100m IM; silver in 50m freestyle; bronze in 50m backstroke.</li>
+<li><strong>2017 Copenhagen</strong>: Broke Russian national record in 50m freestyle twice; won gold.</li>
+<li><strong>2019 Glasgow</strong>: Won <strong>seven gold medals</strong>, including 50m freestyle and 50m breaststroke (European record).</li>
+<li>(Sources: grok + perplexity)</li>
+</ul>
+</div>
+<div class="sub-section" id="career-wide-summary">
+<h3>Career-Wide Summary</h3>
+<ul>
+<li>One of the most versatile sprint swimmers of his generation.</li>
+<li>Exceptional short-course swimmer; strong relay anchor.</li>
+<li>Career shaped and ultimately limited by <strong>Russian doping sanctions</strong> — competed as ROC/neutral athlete in later years, missed competitions due to national federation bans, and retired earlier than planned due to circumstances beyond his control.</li>
+<li>Post-retirement, involved in coaching and swimming instruction.</li>
+<li>(Sources: grok + perplexity)</li>
+</ul>
+</div>
+</section>
+<section id="section-2" class="section">
+<h2>Additional from Grok Search</h2>
+<div class="sub-section" id="detailed-medal-counts">
+<h3>Detailed Medal Counts</h3>
+<p>Grok provides comprehensive medal tallies:
+- <strong>Olympics</strong>: 0 G / 0 S / 1 B (1 total)
+- <strong>World Championships (LC)</strong>: 0 G / 3 S / 3 B (6 total)
+- <strong>World Championships (SC)</strong>: 11 G / 11 S / 2 B (24 total)
+- <strong>European Championships (LC)</strong>: 2 G / 4 S / 1 B (7 total)
+- <strong>European Championships (SC)</strong>: 17 G / 7 S / 3 B (27 total)
+- <strong>FINA World Cup</strong>: 176 medals (123 G / 34 S / 19 B)
+- <strong>Overall major championship tally</strong>: 30 G / 25 S / 10 B (65 total)</p>
+</div>
+<div class="sub-section" id="specific-olympic-results">
+<h3>Specific Olympic Results</h3>
+<ul>
+<li><strong>2012 London</strong>: Bronze 4×100m free relay (split 47.85; total 3:11.41).</li>
+<li><strong>2016 Rio</strong>: 10th 50m free, 9th 100m free, 4th 4×100m free relay, 4th 4×100m medley relay.</li>
+<li><strong>2020 Tokyo</strong>: 16th 50m free (22.25 semis), 7th 4×100m free relay.</li>
+</ul>
+</div>
+<div class="sub-section" id="long-course-world-championships-detail">
+<h3>Long Course World Championships Detail</h3>
+<ul>
+<li>2013 Barcelona: <strong>Silver 50m free</strong> (21.47, Russian record).</li>
+<li>2015 Kazan, 2017 Budapest, 2019 Gwangju: Multiple silver/bronze and high placements in relays and 50m events. Contributed to Russian relay records.</li>
+</ul>
+</div>
+<div class="sub-section" id="short-course-world-championships-detail">
+<h3>Short Course World Championships Detail</h3>
+<ul>
+<li>Golds in 50m and 100m freestyle at 2012 and 2018 editions. Multiple relay golds across 2012 Istanbul, 2014 Doha, 2016 Windsor, 2018 Hangzhou, and 2021 Abu Dhabi. Set or contributed to multiple relay records.</li>
+</ul>
+</div>
+<div class="sub-section" id="universiade">
+<h3>Universiade</h3>
+<ul>
+<li><strong>2013 Kazan Summer Universiade</strong>: Swept 6 golds — 50m and 100m free, 50m back, 50m breast, plus two relays.</li>
+</ul>
+</div>
+<div class="sub-section" id="ncaa">
+<h3>NCAA</h3>
+<ul>
+<li>Multi-time NCAA champion (2013) at USC. First swimmer to break 18 seconds for a 50-yard freestyle relay split (17.86).</li>
+</ul>
+</div>
+<div class="sub-section" id="personal-bests-selected">
+<h3>Personal Bests (Selected)</h3>
+<p><strong>Long Course (LCM)</strong>:</p>
+<table>
+<thead><tr><th>Event</th><th>Time</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>50m freestyle</td><td>21.27</td><td>Russian NR; top 10 all-time (2019)</td></tr>
+<tr><td>100m freestyle</td><td>47.62</td><td>2013 Universiade</td></tr>
+<tr><td>50m backstroke</td><td>24.29</td><td>2018 Euros</td></tr>
+<tr><td>50m breaststroke</td><td>27.34</td><td></td></tr>
+<tr><td>50m butterfly</td><td>23.38</td><td></td></tr>
+</tbody>
+</table>
+<p><strong>Short Course (SCM)</strong>:</p>
+<table>
+<thead><tr><th>Event</th><th>Time</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>50m freestyle</td><td>20.31</td><td>Russian NR (2017 Euros)</td></tr>
+<tr><td>100m freestyle</td><td>44.95</td><td>Russian NR (2018 World Cup)</td></tr>
+<tr><td>50m breaststroke</td><td>25.51</td><td>Former ER/NR (2019 Euros)</td></tr>
+<tr><td>100m breaststroke</td><td>56.33</td><td></td></tr>
+<tr><td>100m IM</td><td>50.26</td><td>Former WR, ER (2018 World Cup)</td></tr>
+</tbody>
+</table>
+<p><strong>Yards (NCAA)</strong>:</p>
+<table>
+<thead><tr><th>Event</th><th>Time</th></tr></thead>
+<tbody>
+<tr><td>50y free</td><td>18.63</td></tr>
+<tr><td>100y free</td><td>40.76</td></tr>
+</tbody>
+</table>
+</div>
+<div class="sub-section" id="retirement-detail">
+<h3>Retirement Detail</h3>
+<ul>
+<li>Announced retirement <strong>April 2024</strong> at age 31.</li>
+<li>Cited factors beyond his control despite planning to swim through Paris 2024.</li>
+<li>Post-retirement: coaching and swimming instruction.</li>
+</ul>
+</div>
+</section>
+<section id="section-3" class="section">
+<h2>Additional from Perplexity</h2>
+<div class="sub-section" id="broad-context-russian-doping-environment">
+<h3>Broad Context — Russian Doping Environment</h3>
+<ul>
+<li>Perplexity emphasizes that Morozov himself had <strong>no clear confirmed individual doping suspension</strong> — the impact was structural: restricted eligibility, neutral-flag competition, non-invitations, and ultimately forced early retirement.</li>
+<li>Competed for <strong>ROC</strong> at Tokyo due to WADA sanctions on Russia.</li>
+</ul>
+</div>
+<div class="sub-section" id="specific-european-championships-detail-2012-chartres">
+<h3>Specific European Championships Detail (2012 Chartres)</h3>
+<ul>
+<li>Confirms breakout performance: Gold in 100m free and 100m IM; silver in 50m free; bronze in 50m back.</li>
+</ul>
+</div>
+<div class="sub-section" id="usc-detail">
+<h3>USC Detail</h3>
+<ul>
+<li>Confirmed as USC Trojan; All-American. (Grok provides NCAA records; Perplexity confirms the USC connection.)</li>
+</ul>
+</div>
+<div class="sub-section" id="world-championships-2017-budapest">
+<h3>World Championships — 2017 Budapest</h3>
+<ul>
+<li>Perplexity specifies bronze in 50m freestyle and relay bronze in 4×100m medley relay.</li>
+</ul>
+</div>
+</section>
+<section id="section-4" class="section">
+<h2>Contradictions / Discrepancies</h2>
+<table>
+<thead>
+<tr>
+<th>Detail</th>
+<th>Grok</th>
+<th>Perplexity</th>
+<th>Resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>2013 World Championships location</strong></td>
+<td>Barcelona</td>
+<td>Perplexity lists "Istanbul" for 2013 Worlds</td>
+<td><strong>Grok is correct.</strong> The 2013 World Aquatics Championships (long course) were in Barcelona. Istanbul hosted the 2012 Short Course Worlds. Perplexity appears to have conflated the two. The 2013 long-course Worlds had Morozov winning silver in 50m free in Barcelona, not gold in Istanbul.</td>
+</tr>
+<tr>
+<td><strong>2013 Worlds medals</strong></td>
+<td>Silver in 50m free (LC, Barcelona)</td>
+<td>"Gold in 50m freestyle, Gold in 100m freestyle, Silver in 4×100m medley relay" for 2013 Worlds listed as Istanbul</td>
+<td><strong>Grok is correct.</strong> At 2013 Barcelona (LC), Morozov won silver in 50m free and bronze in 4×100m free relay. The golds Perplexity lists (50m free and 100m free) are likely from the <strong>2012 Short Course Worlds</strong> in Istanbul, which Perplexity appears to have mislabelled as 2013. Grok's detailed medal table is more reliable.</td>
+</tr>
+<tr>
+<td><strong>World Cup gold count</strong></td>
+<td>123 gold (176 total)</td>
+<td>"Well over 100 gold"</td>
+<td>Not contradictory — Perplexity is approximate, Grok is precise. Both consistent.</td>
+</tr>
+<tr>
+<td><strong>Retirement date</strong></td>
+<td>April 2024</td>
+<td>"2024/2025-era reporting"</td>
+<td>Grok is more precise. April 2024 is the specific announcement date.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="section-5" class="section">
+<h2>SOURCES</h2>
+<div class="sub-section" id="from-grok-search">
+<h3>From Grok Search:</h3>
+<ul>
+<li><a href="https://swimswam.com/olympic-medalist-vladimir-morozov-announces-retirement-from-professional-swimming/">https://swimswam.com/olympic-medalist-vladimir-morozov-announces-retirement-from-professional-swimming/</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Vladimir_Morozov_(swimmer)">https://en.wikipedia.org/wiki/Vladimir_Morozov_(swimmer)</a></li>
+<li><a href="https://www.olympics.com/en/athletes/vladimir-morozov-1">https://www.olympics.com/en/athletes/vladimir-morozov-1</a></li>
+<li><a href="https://swimswam.com/morozov-hits-21-27-russian-record-to-become-worlds-10th-best-50-freestyler-ever/">https://swimswam.com/morozov-hits-21-27-russian-record-to-become-worlds-10th-best-50-freestyler-ever/</a></li>
+</ul>
+</div>
+<div class="sub-section" id="from-perplexity">
+<h3>From Perplexity:</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Vladimir_Morozov_(swimmer)">https://en.wikipedia.org/wiki/Vladimir_Morozov_(swimmer)</a></li>
+<li><a href="https://www.olympedia.org/athletes/120660">https://www.olympedia.org/athletes/120660</a></li>
+<li><a href="https://swimswam.com/bio/vlad-morozov/">https://swimswam.com/bio/vlad-morozov/</a></li>
+<li><a href="https://www.swimmingworldmagazine.com/news/vladimir-morozov-wins-seven-golds-as-russia-finish-atop-the-medal-table-at-european-sc/">https://www.swimmingworldmagazine.com/news/vladimir-morozov-wins-seven-golds-as-russia-finish-atop-the-medal-table-at-european-sc/</a></li>
+<li><a href="https://usctrojans.com/sports/mens-swimming-and-diving/roster/vladimir-morozov/3070">https://usctrojans.com/sports/mens-swimming-and-diving/roster/vladimir-morozov/3070</a></li>
+<li><a href="https://swim.by/vladimir-morozov/">https://swim.by/vladimir-morozov/</a></li>
+<li><a href="https://www.swimcloud.com/swimmer/94646/">https://www.swimcloud.com/swimmer/94646/</a></li>
+</ul>
+</div>
+</section>
+<section id="section-6" class="section">
+<h2>CONFIDENCE: High (with one caution)</h2>
+<p>Both sources are closely aligned on Morozov's core career narrative: Olympic bronze (2012 4×100m free relay), short-course dominance (World Cup king, 100m IM WR 50.26, 7 golds at 2019 European SC), USC/NCAA background, and career curtailed by Russian doping sanctions. Grok provides substantially more detail — full medal tables, personal bests, specific Olympic placements, and NCAA records. </p>
+<p><strong>Caution</strong>: Perplexity mislabels the 2013 World Championships as Istanbul (they were Barcelona) and attributes gold medals that appear to belong to the 2012 Short Course Worlds. Grok's detailed Wikipedia-sourced medal table is more reliable. For competitive results, prefer Grok's data.</p>
+</section>
+<section id="section-7" class="section">
+<h2>GAPS</h2>
+<ul>
+<li><strong>Perplexity data error</strong>: 2013 World Championships mislabelled — Istanbul vs. Barcelona; gold medals likely from 2012 SC Worlds. User should verify 2013 LC Worlds results independently.</li>
+<li><strong>No detailed doping/ban timeline</strong>: Both sources mention the broader Russian doping environment but neither provides a specific timeline of which competitions Morozov was excluded from, under what specific WADA/FINA rules, or whether he personally challenged any restrictions.</li>
+<li><strong>ISL (International Swimming League) detail</strong>: Grok mentions Morozov was "a standout in the ISL" but neither source provides ISL team, season results, or earnings.</li>
+<li><strong>Coaching lineage</strong>: Who coached Morozov at USC? Who were his Russian national team coaches? Dave Salo at USC is strongly associated with him but neither source names him or traces Morozov's coaching journey.</li>
+<li><strong>Personal life</strong>: No mention of family, education beyond USC, emigration story (when did he move to the U.S.?), or dual citizenship status.</li>
+<li><strong>Post-retirement detail</strong>: Both sources say "coaching and instruction" but no specifics — where, what level, what organization.</li>
+<li><strong>Relay split analysis</strong>: Morozov was a renowned relay anchor but neither source provides split comparisons or historical rankings of his relay performances relative to peers.</li>
+<li><strong>Earnings/prize money</strong>: World Cup dominance suggests significant prize money. Neither source quantifies career earnings.</li>
+<li><strong>No YouTube/race footage references</strong>: For a sprinter with visually dramatic races, no links to iconic race videos.</li>
+</ul>
+</section>
 
         <footer class="footer">
-          <p>Research Report: Vladimir Morozov — Russian Olympian Swimmer</p>
+          <p>Oracle Research — Vladimir Morozov — Russian Olympian Swimmer: Synthesized Research</p>
         </footer>
       </div>
     </main>
