@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
+  <title>Vladimir Morozov — Russian Olympian Swimmer: Synthesized Research</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --surface: #ffffff;
+      --surface-2: #eef2f8;
+      --text: #121826;
+      --muted: #5b6475;
+      --border: rgba(18, 24, 38, 0.12);
+      --accent: #335cff;
+      --accent-2: #0f766e;
+      --danger: #b42318;
+      --shadow: 0 10px 30px rgba(18, 24, 38, 0.08);
+      --radius: 18px;
+      --maxw: 1120px;
+      --line: 1.65;
+      --sidebar-width: 260px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: var(--line);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: var(--sidebar-width);
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      padding: 24px 16px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .toc-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .toc-item {
+      margin-bottom: 8px;
+    }
+
+    .toc-link {
+      display: block;
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .toc-link:hover {
+      background: var(--surface-2);
+    }
+
+    .toc-link.active {
+      background: var(--accent);
+      color: white;
+    }
+
+    /* Color-coded TOC items — 10 color slots */
+    .toc-item:nth-child(1) .toc-link { border-left: 4px solid #2d6a4f; background: rgba(184, 224, 208, 0.3); }
+    .toc-item:nth-child(2) .toc-link { border-left: 4px solid #1d3557; background: rgba(197, 213, 216, 0.3); }
+    .toc-item:nth-child(3) .toc-link { border-left: 4px solid #457b9d; background: rgba(200, 223, 240, 0.3); }
+    .toc-item:nth-child(4) .toc-link { border-left: 4px solid #4a4e69; background: rgba(192, 201, 208, 0.3); }
+    .toc-item:nth-child(5) .toc-link { border-left: 4px solid #9d4edd; background: rgba(237, 213, 206, 0.3); }
+    .toc-item:nth-child(6) .toc-link { border-left: 4px solid #6c757d; background: rgba(197, 200, 202, 0.3); }
+    .toc-item:nth-child(7) .toc-link { border-left: 4px solid #40916c; background: rgba(192, 230, 208, 0.3); }
+    .toc-item:nth-child(8) .toc-link { border-left: 4px solid #7b2cbf; background: rgba(224, 208, 232, 0.3); }
+    .toc-item:nth-child(9) .toc-link { border-left: 4px solid #d4a373; background: rgba(240, 224, 192, 0.3); }
+    .toc-item:nth-child(10) .toc-link { border-left: 4px solid #5c677d; background: rgba(200, 213, 229, 0.3); }
+
+    .toc-item:nth-child(1) .toc-link.active { background: #b8e0d0; }
+    .toc-item:nth-child(2) .toc-link.active { background: #c5d5d8; }
+    .toc-item:nth-child(3) .toc-link.active { background: #c8dff0; }
+    .toc-item:nth-child(4) .toc-link.active { background: #c0c9d0; }
+    .toc-item:nth-child(5) .toc-link.active { background: #edd5ce; }
+    .toc-item:nth-child(6) .toc-link.active { background: #c5c8ca; }
+    .toc-item:nth-child(7) .toc-link.active { background: #c0e6d0; }
+    .toc-item:nth-child(8) .toc-link.active { background: #e0d0e8; }
+    .toc-item:nth-child(9) .toc-link.active { background: #f0e0c0; }
+    .toc-item:nth-child(10) .toc-link.active { background: #c8d5e5; }
+
+    .toc-sublist {
+      list-style: none;
+      padding-left: 16px;
+      margin: 4px 0 0;
+    }
+
+    .toc-subitem {
+      margin-bottom: 4px;
+    }
+
+    .toc-sublink {
+      font-size: 0.9rem;
+      padding: 4px 8px;
+      color: var(--muted);
+    }
+
+    .toc-sublink:hover {
+      background: var(--surface-2);
+    }
+
+    .toc-sublink.active {
+      background: var(--accent);
+      color: white;
+    }
+
+    /* Main content */
+    .main-content {
+      flex: 1;
+      padding: 24px;
+      max-width: calc(100% - var(--sidebar-width));
+    }
+
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+    }
+
+    .hero { padding: 34px 0 18px; }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--surface) 88%, transparent);
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      max-width: 16ch;
+    }
+
+    .lede {
+      max-width: 70ch;
+      font-size: 1.06rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    @media (max-width: 900px) {
+      .container { flex-direction: column; }
+      .sidebar { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 1px solid var(--border); padding: 16px; }
+      .main-content { max-width: 100%; padding: 16px; }
+      .toc-title { display: none; }
+      .toc-list { display: flex; flex-wrap: wrap; gap: 8px; }
+      .toc-item { flex: 1 1 auto; }
+      .toc-link { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .toc-sublist { display: none; }
+      .grid.cols-3 { grid-template-columns: 1fr; }
+    }
+
+    /* Cards */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .stat strong { font-size: 1.8rem; letter-spacing: -0.03em; }
+    .stat span { color: var(--muted); }
+
+    /* Content sections — 10 color slots, rotate for >10 */
+    .section {
+      margin: 30px 0;
+      padding: 24px;
+      border-radius: var(--radius);
+      border-left: 4px solid var(--border);
+    }
+
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 1.45rem;
+      letter-spacing: -0.02em;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section h3 {
+      margin: 20px 0 10px;
+      font-size: 1.1rem;
+    }
+
+    /* Section color slots — matches TOC colors */
+    #section-1  { background: #d9eae0; border-left-color: #2d6a4f; }
+    #section-2  { background: #dde6e7; border-left-color: #1d3557; }
+    #section-3  { background: #e4eff7; border-left-color: #457b9d; }
+    #section-4  { background: #d7dfe4; border-left-color: #4a4e69; }
+    #section-5  { background: #f6e9e5; border-left-color: #9d4edd; }
+    #section-6  { background: #dde0e2; border-left-color: #6c757d; }
+    #section-7  { background: #e1f4e8; border-left-color: #40916c; }
+    #section-8  { background: #f0e6f5; border-left-color: #7b2cbf; }
+    #section-9  { background: #fff2d9; border-left-color: #d4a373; }
+    #section-10 { background: #e8f0f7; border-left-color: #5c677d; }
+
+    /* Sub-section cards — lighter shade of parent section */
+    .sub-section {
+      background: rgba(255,255,255,0.5);
+      border-left: 3px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      margin: 14px 0;
+    }
+
+    #section-1  .sub-section { background: rgba(255,255,255,0.55); border-left-color: #2d6a4f; }
+    #section-2  .sub-section { background: rgba(255,255,255,0.55); border-left-color: #1d3557; }
+    #section-3  .sub-section { background: rgba(255,255,255,0.55); border-left-color: #457b9d; }
+    #section-4  .sub-section { background: rgba(255,255,255,0.55); border-left-color: #4a4e69; }
+    #section-5  .sub-section { background: rgba(255,255,255,0.55); border-left-color: #9d4edd; }
+    #section-6  .sub-section { background: rgba(255,255,255,0.55); border-left-color: #6c757d; }
+    #section-7  .sub-section { background: rgba(255,255,255,0.55); border-left-color: #40916c; }
+    #section-8  .sub-section { background: rgba(255,255,255,0.55); border-left-color: #7b2cbf; }
+    #section-9  .sub-section { background: rgba(255,255,255,0.55); border-left-color: #d4a373; }
+    #section-10 .sub-section { background: rgba(255,255,255,0.55); border-left-color: #5c677d; }
+
+    .section ul, .section ol { margin: 0; padding-left: 18px; }
+    .section li { margin: 10px 0; }
+
+    .section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+    }
+
+    .section th, .section td {
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section th {
+      font-weight: 600;
+      background: var(--surface-2);
+    }
+
+    .muted { color: var(--muted); }
+
+    .tagrow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--accent) 12%, transparent);
+      color: var(--text);
+      border: 1px solid var(--border);
+      font-size: 0.92rem;
+    }
+
+    .callout {
+      border-left: 4px solid var(--accent-2);
+      padding: 16px 18px;
+      background: color-mix(in srgb, var(--accent-2) 10%, var(--surface));
+      border-radius: 14px;
+    }
+
+    .danger {
+      border-left-color: var(--danger);
+      background: color-mix(in srgb, var(--danger) 9%, var(--surface));
+    }
+
+    .footer {
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border);
+      margin-top: 30px;
+    }
+
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h3 class="toc-title">Contents</h3>
+      <ul class="toc-list">
+                <li class="toc-item">
+          <a href="#section-1" class="toc-link">Corroborated Findings (both sources agree)</a>
+          <ul class="toc-sublist">
+            <li class="toc-subitem"><a href="#section-1-sub-1" class="toc-sublink">Basic Identity</a></li>
+            <li class="toc-subitem"><a href="#section-1-sub-2" class="toc-sublink">Olympic Career</a></li>
+            <li class="toc-subitem"><a href="#section-1-sub-3" class="toc-sublink">World Championships (Short Course)</a></li>
+            <li class="toc-subitem"><a href="#section-1-sub-4" class="toc-sublink">FINA Swimming World Cup</a></li>
+            <li class="toc-subitem"><a href="#section-1-sub-5" class="toc-sublink">100m Individual Medley — World Record</a></li>
+            <li class="toc-subitem"><a href="#section-1-sub-6" class="toc-sublink">European Championships (Short Course)</a></li>
+          </ul>
+        </li>
+        <li class="toc-item">
+          <a href="#section-2" class="toc-link">Additional from Grok Search</a>
+          <ul class="toc-sublist">
+            <li class="toc-subitem"><a href="#section-2-sub-1" class="toc-sublink">Career-Wide Summary</a></li>
+            <li class="toc-subitem"><a href="#section-2-sub-2" class="toc-sublink">Detailed Medal Counts</a></li>
+            <li class="toc-subitem"><a href="#section-2-sub-3" class="toc-sublink">Specific Olympic Results</a></li>
+            <li class="toc-subitem"><a href="#section-2-sub-4" class="toc-sublink">Long Course World Championships Detail</a></li>
+            <li class="toc-subitem"><a href="#section-2-sub-5" class="toc-sublink">Short Course World Championships Detail</a></li>
+            <li class="toc-subitem"><a href="#section-2-sub-6" class="toc-sublink">Universiade</a></li>
+            <li class="toc-subitem"><a href="#section-2-sub-7" class="toc-sublink">NCAA</a></li>
+            <li class="toc-subitem"><a href="#section-2-sub-8" class="toc-sublink">Personal Bests (Selected)</a></li>
+          </ul>
+        </li>
+        <li class="toc-item">
+          <a href="#section-3" class="toc-link">Additional from Perplexity</a>
+          <ul class="toc-sublist">
+            <li class="toc-subitem"><a href="#section-3-sub-1" class="toc-sublink">Retirement Detail</a></li>
+            <li class="toc-subitem"><a href="#section-3-sub-2" class="toc-sublink">Broad Context — Russian Doping Environment</a></li>
+            <li class="toc-subitem"><a href="#section-3-sub-3" class="toc-sublink">Specific European Championships Detail (2012 Chartres)</a></li>
+            <li class="toc-subitem"><a href="#section-3-sub-4" class="toc-sublink">USC Detail</a></li>
+          </ul>
+        </li>
+        <li class="toc-item">
+          <a href="#section-4" class="toc-link">Contradictions / Discrepancies</a>
+          <ul class="toc-sublist">
+          </ul>
+        </li>
+        <li class="toc-item">
+          <a href="#section-5" class="toc-link">SOURCES</a>
+          <ul class="toc-sublist">
+            <li class="toc-subitem"><a href="#section-5-sub-1" class="toc-sublink">World Championships — 2017 Budapest</a></li>
+            <li class="toc-subitem"><a href="#section-5-sub-2" class="toc-sublink">From Grok Search:</a></li>
+          </ul>
+        </li>
+        <li class="toc-item">
+          <a href="#section-6" class="toc-link">CONFIDENCE: High (with one caution)</a>
+          <ul class="toc-sublist">
+          </ul>
+        </li>
+        <li class="toc-item">
+          <a href="#section-7" class="toc-link">GAPS</a>
+          <ul class="toc-sublist">
+            <li class="toc-subitem"><a href="#section-7-sub-1" class="toc-sublink">From Perplexity:</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="wrap">
+        <section class="hero">
+          <div class="eyebrow">Sports Research</div>
+          <h1>Vladimir Morozov — Russian Olympian Swimmer: Synthesized Research</h1>
+          <p class="lede">Synthesized Research</p>
+          <div class="grid cols-3 section">
+            <div class="card stat">
+              <strong>10</strong>
+              <span>Claims Analyzed</span>
+            </div>
+            <div class="card stat">
+              <strong>123</strong>
+              <span>Medals Won</span>
+            </div>
+            <div class="card stat">
+              <strong>25+</strong>
+              <span>Sources Cited</span>
+            </div>
+          </div>
+        </section>
+
+                <section id="section-1" class="section">
+          <h2>Corroborated Findings (both sources agree)</h2>
+
+          <div class="sub-section" id="section-1-sub-1">
+            <h3>Basic Identity</h3>
+            <p>Vladimir Viktorovich Morozov, born 16 June 1992 in Novosibirsk, Russia. Russian competitive swimmer, retired. Sprint specialist — versatile across freestyle, backstroke, breaststroke, butterfly, and individual medley. Swam collegiately at the University of Southern California (USC); became an All-American. Competed internationally for Russia, and later as a neutral athlete (ROC / Russian Swimming Federation) due to doping-related sanctions on Russia. Retired from professional swimming, announced in 2024. (Sources: grok + perplexity)</p>
+          </div>
+
+          <div class="sub-section" id="section-1-sub-2">
+            <h3>Olympic Career</h3>
+            <p>2012 London (Russia): Bronze medal — 4×100m freestyle relay. Also competed in 100m backstroke and 4×100m medley relay. 2016 Rio (Russia): Competed in 50m freestyle, 100m freestyle, 4×100m freestyle relay, 4×100m medley relay. Did not medal. 2020 Tokyo (ROC): Competed in 50m freestyle and 4×100m freestyle relay. Did not medal. Summary: 0 gold, 0 silver, 1 bronze across three Olympics. (Sources: grok + perplexity)</p>
+          </div>
+
+          <div class="sub-section" id="section-1-sub-3">
+            <h3>World Championships (Short Course)</h3>
+            <p>Dominant in short-course (25m) World Championships across multiple editions beginning with 2012 Istanbul, where he won multiple medals including gold in relays. One of the most decorated short-course swimmers of his era. (Sources: grok + perplexity)</p>
+          </div>
+
+          <div class="sub-section" id="section-1-sub-4">
+            <h3>FINA Swimming World Cup</h3>
+            <p>One of the most successful swimmers ever on the short-course World Cup circuit. Well over 100 gold medals (Perplexity: "well over 100"; Grok: 123 gold out of 176 total medals). Set and tied multiple records in 100m IM and 50m freestyle. (Sources: grok + perplexity)</p>
+          </div>
+
+          <div class="sub-section" id="section-1-sub-5">
+            <h3>100m Individual Medley — World Record</h3>
+            <p>Set a world record in the short-course 100m individual medley at 50.26 seconds (2018 World Cup). European record, former WR. (Sources: grok + perplexity)</p>
+          </div>
+
+          <div class="sub-section" id="section-1-sub-6">
+            <h3>European Championships (Short Course)</h3>
+            <p>Extremely successful at European Short Course Championships, including: - 2012 Chartres: Gold in 100m freestyle and 100m IM; silver in 50m freestyle; bronze in 50m backstroke. - 2017 Copenhagen: Broke Russian national record in 50m freestyle twice; won gold. - 2019 Glasgow: Won seven gold medals, including 50m freestyle and 50m breaststroke (European record). (Sources: grok + perplexity)</p>
+          </div>
+        </section>
+
+        <section id="section-2" class="section">
+          <h2>Additional from Grok Search</h2>
+
+          <div class="sub-section" id="section-2-sub-1">
+            <h3>Career-Wide Summary</h3>
+            <p>One of the most versatile sprint swimmers of his generation. Exceptional short-course swimmer; strong relay anchor. Career shaped and ultimately limited by Russian doping sanctions — competed as ROC/neutral athlete in later years, missed competitions due to national federation bans, and retired earlier than planned due to circumstances beyond his control. Post-retirement, involved in coaching and swimming instruction. (Sources: grok + perplexity)</p>
+          </div>
+
+          <div class="sub-section" id="section-2-sub-2">
+            <h3>Detailed Medal Counts</h3>
+            <p>Grok provides comprehensive medal tallies: Olympics: 0 G / 0 S / 1 B (1 total) World Championships (LC): 0 G / 3 S / 3 B (6 total) World Championships (SC): 11 G / 11 S / 2 B (24 total) European Championships (LC): 2 G / 4 S / 1 B (7 total) European Championships (SC): 17 G / 7 S / 3 B (27 total) FINA World Cup: 176 medals (123 G / 34 S / 19 B) Overall major championship tally: 30 G / 25 S / 10 B (65 total)</p>
+          </div>
+
+          <div class="sub-section" id="section-2-sub-3">
+            <h3>Specific Olympic Results</h3>
+            <p>2012 London: Bronze 4×100m free relay (split 47.85; total 3:11.41). 2016 Rio: 10th 50m free, 9th 100m free, 4th 4×100m free relay, 4th 4×100m medley relay. 2020 Tokyo: 16th 50m free (22.25 semis), 7th 4×100m free relay.</p>
+          </div>
+
+          <div class="sub-section" id="section-2-sub-4">
+            <h3>Long Course World Championships Detail</h3>
+            <p>2013 Barcelona: Silver 50m free (21.47, Russian record). 2015 Kazan, 2017 Budapest, 2019 Gwangju: Multiple silver/bronze and high placements in relays and 50m events. Contributed to Russian relay records.</p>
+          </div>
+
+          <div class="sub-section" id="section-2-sub-5">
+            <h3>Short Course World Championships Detail</h3>
+            <p>Golds in 50m and 100m freestyle at 2012 and 2018 editions. Multiple relay golds across 2012 Istanbul, 2014 Doha, 2016 Windsor, 2018 Hangzhou, and 2021 Abu Dhabi. Set or contributed to multiple relay records.</p>
+          </div>
+
+          <div class="sub-section" id="section-2-sub-6">
+            <h3>Universiade</h3>
+            <p>2013 Kazan Summer Universiade: Swept 6 golds — 50m and 100m free, 50m back, 50m breast, plus two relays.</p>
+          </div>
+
+          <div class="sub-section" id="section-2-sub-7">
+            <h3>NCAA</h3>
+            <p>Multi-time NCAA champion (2013) at USC. First swimmer to break 18 seconds for a 50-yard freestyle relay split (17.86).</p>
+          </div>
+
+          <div class="sub-section" id="section-2-sub-8">
+            <h3>Personal Bests (Selected)</h3>
+            <p>Long Course (LCM): Short Course (SCM): Yards (NCAA):</p>
+          </div>
+        </section>
+
+        <section id="section-3" class="section">
+          <h2>Additional from Perplexity</h2>
+
+          <div class="sub-section" id="section-3-sub-1">
+            <h3>Retirement Detail</h3>
+            <p>Announced retirement April 2024 at age 31. Cited factors beyond his control despite planning to swim through Paris 2024. Post-retirement: coaching and swimming instruction.</p>
+          </div>
+
+          <div class="sub-section" id="section-3-sub-2">
+            <h3>Broad Context — Russian Doping Environment</h3>
+            <p>Perplexity emphasizes that Morozov himself had no clear confirmed individual doping suspension — the impact was structural: restricted eligibility, neutral-flag competition, non-invitations, and ultimately forced early retirement. Competed for ROC at Tokyo due to WADA sanctions on Russia.</p>
+          </div>
+
+          <div class="sub-section" id="section-3-sub-3">
+            <h3>Specific European Championships Detail (2012 Chartres)</h3>
+            <p>Confirms breakout performance: Gold in 100m free and 100m IM; silver in 50m free; bronze in 50m back.</p>
+          </div>
+
+          <div class="sub-section" id="section-3-sub-4">
+            <h3>USC Detail</h3>
+            <p>Confirmed as USC Trojan; All-American. (Grok provides NCAA records; Perplexity confirms the USC connection.)</p>
+          </div>
+        </section>
+
+        <section id="section-4" class="section">
+          <h2>Contradictions / Discrepancies</h2>
+        </section>
+
+        <section id="section-5" class="section">
+          <h2>SOURCES</h2>
+
+          <div class="sub-section" id="section-5-sub-1">
+            <h3>World Championships — 2017 Budapest</h3>
+            <p>Perplexity specifies bronze in 50m freestyle and relay bronze in 4×100m medley relay.</p>
+          </div>
+
+          <div class="sub-section" id="section-5-sub-2">
+            <h3>From Grok Search:</h3>
+            <p>https://swimswam.com/olympic-medalist-vladimir-morozov-announces-retirement-from-professional-swimming/ https://en.wikipedia.org/wiki/Vladimir_Morozov_(swimmer) https://www.olympics.com/en/athletes/vladimir-morozov-1 https://swimswam.com/morozov-hits-21-27-russian-record-to-become-worlds-10th-best-50-freestyler-ever/</p>
+          </div>
+        </section>
+
+        <section id="section-6" class="section">
+          <h2>CONFIDENCE: High (with one caution)</h2>
+        </section>
+
+        <section id="section-7" class="section">
+          <h2>GAPS</h2>
+
+          <div class="sub-section" id="section-7-sub-1">
+            <h3>From Perplexity:</h3>
+            <p>https://en.wikipedia.org/wiki/Vladimir_Morozov_(swimmer) https://www.olympedia.org/athletes/120660 https://swimswam.com/bio/vlad-morozov/ https://www.swimmingworldmagazine.com/news/vladimir-morozov-wins-seven-golds-as-russia-finish-atop-the-medal-table-at-european-sc/ https://usctrojans.com/sports/mens-swimming-and-diving/roster/vladimir-morozov/3070 https://swim.by/vladimir-morozov/ https://www.swimcloud.com/swimmer/94646/</p>
+          </div>
+        </section>
+
+
+
+        <footer class="footer">
+          <p>Research Report: Vladimir Morozov — Russian Olympian Swimmer</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('.section[id]');
+      const tocLinks = document.querySelectorAll('.toc-link, .toc-sublink');
+      function updateActiveLink() {
+        let current = '';
+        sections.forEach(function(s) {
+          if (pageYOffset >= s.offsetTop - 100) current = s.getAttribute('id');
+        });
+        tocLinks.forEach(function(link) {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+        });
+      }
+      window.addEventListener('scroll', updateActiveLink);
+      updateActiveLink();
+    });
+  </script>
+</body>
+</html>
