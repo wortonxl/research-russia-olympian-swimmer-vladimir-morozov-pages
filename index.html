@@ -37,7 +37,7 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    a { color: var(--accent); text-decoration: none; }
+    a { color: var(--accent); text-decoration: none; word-break: break-word; overflow-wrap: break-word; }
     a:hover { text-decoration: underline; }
 
     .container {
@@ -274,6 +274,51 @@
     #section-8  .sub-section { background: rgba(255,255,255,0.55); border-left-color: #7b2cbf; }
     #section-9  .sub-section { background: rgba(255,255,255,0.55); border-left-color: #d4a373; }
     #section-10 .sub-section { background: rgba(255,255,255,0.55); border-left-color: #5c677d; }
+
+    /* Source cards — used for cited references with URLs */
+    .source-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      margin-bottom: 18px;
+    }
+
+    .source-card blockquote {
+      margin: 0;
+      padding: 0;
+    }
+
+    .source-card p {
+      margin: 8px 0;
+    }
+
+    .source-name {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .source-url {
+      word-break: break-all;
+      overflow-wrap: break-word;
+    }
+
+    .source-url a {
+      display: block;
+      word-break: break-all;
+    }
+
+    .source-date {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .source-quote {
+      font-style: italic;
+      margin-top: 8px;
+    }
 
     .section ul, .section ol { margin: 0; padding-left: 18px; }
     .section li { margin: 10px 0; }
@@ -541,7 +586,10 @@
 
           <div class="sub-section" id="section-5-sub-2">
             <h3>From Grok Search:</h3>
-            <p>https://swimswam.com/olympic-medalist-vladimir-morozov-announces-retirement-from-professional-swimming/ https://en.wikipedia.org/wiki/Vladimir_Morozov_(swimmer) https://www.olympics.com/en/athletes/vladimir-morozov-1 https://swimswam.com/morozov-hits-21-27-russian-record-to-become-worlds-10th-best-50-freestyler-ever/</p>
+            <p class="source-url"><a href="https://swimswam.com/olympic-medalist-vladimir-morozov-announces-retirement-from-professional-swimming/">https://swimswam.com/olympic-medalist-vladimir-morozov-announces-retirement-from-professional-swimming/</a></p>
+            <p class="source-url"><a href="https://en.wikipedia.org/wiki/Vladimir_Morozov_(swimmer)">https://en.wikipedia.org/wiki/Vladimir_Morozov_(swimmer)</a></p>
+            <p class="source-url"><a href="https://www.olympics.com/en/athletes/vladimir-morozov-1">https://www.olympics.com/en/athletes/vladimir-morozov-1</a></p>
+            <p class="source-url"><a href="https://swimswam.com/morozov-hits-21-27-russian-record-to-become-worlds-10th-best-50-freestyler-ever/">https://swimswam.com/morozov-hits-21-27-russian-record-to-become-worlds-10th-best-50-freestyler-ever/</a></p>
           </div>
         </section>
 
@@ -554,7 +602,13 @@
 
           <div class="sub-section" id="section-7-sub-1">
             <h3>From Perplexity:</h3>
-            <p>https://en.wikipedia.org/wiki/Vladimir_Morozov_(swimmer) https://www.olympedia.org/athletes/120660 https://swimswam.com/bio/vlad-morozov/ https://www.swimmingworldmagazine.com/news/vladimir-morozov-wins-seven-golds-as-russia-finish-atop-the-medal-table-at-european-sc/ https://usctrojans.com/sports/mens-swimming-and-diving/roster/vladimir-morozov/3070 https://swim.by/vladimir-morozov/ https://www.swimcloud.com/swimmer/94646/</p>
+            <p class="source-url"><a href="https://en.wikipedia.org/wiki/Vladimir_Morozov_(swimmer)">https://en.wikipedia.org/wiki/Vladimir_Morozov_(swimmer)</a></p>
+            <p class="source-url"><a href="https://www.olympedia.org/athletes/120660">https://www.olympedia.org/athletes/120660</a></p>
+            <p class="source-url"><a href="https://swimswam.com/bio/vlad-morozov/">https://swimswam.com/bio/vlad-morozov/</a></p>
+            <p class="source-url"><a href="https://www.swimmingworldmagazine.com/news/vladimir-morozov-wins-seven-golds-as-russia-finish-atop-the-medal-table-at-european-sc/">https://www.swimmingworldmagazine.com/news/vladimir-morozov-wins-seven-golds-as-russia-finish-atop-the-medal-table-at-european-sc/</a></p>
+            <p class="source-url"><a href="https://usctrojans.com/sports/mens-swimming-and-diving/roster/vladimir-morozov/3070">https://usctrojans.com/sports/mens-swimming-and-diving/roster/vladimir-morozov/3070</a></p>
+            <p class="source-url"><a href="https://swim.by/vladimir-morozov/">https://swim.by/vladimir-morozov/</a></p>
+            <p class="source-url"><a href="https://www.swimcloud.com/swimmer/94646/">https://www.swimcloud.com/swimmer/94646/</a></p>
           </div>
         </section>
 
